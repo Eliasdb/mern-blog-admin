@@ -1,8 +1,4 @@
-{
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api"
-    }
-  ]
-}
+[[rewrites]]
+from = "/api/(.*)"
+to=  "/api"
+status = 200
