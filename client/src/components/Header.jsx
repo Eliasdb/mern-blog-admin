@@ -44,7 +44,6 @@ const Header = () => {
               />
               Create new post
             </Link>
-
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
