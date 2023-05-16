@@ -9,7 +9,7 @@ const PostPage = () => {
   const { userInfo } = useContext(UserContext);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/post/${id}`).then((response) => {
+    fetch(`${import.meta.env.VITE_API_URL}/post/${id}`).then((response) => {
       response.json().then((postInfo) => {
         setPostInfo(postInfo);
       });
@@ -27,7 +27,10 @@ const PostPage = () => {
       </div>
 
       <div className="image">
-        <img src={`http://localhost:4000/${postInfo.cover}`} alt="" />
+        <img
+          src={`${import.meta.env.VITE_UPLOAD_URL}/${postInfo.cover}`}
+          alt=""
+        />
       </div>
       {userInfo.id === postInfo.author._id && (
         <div className="edit-row">

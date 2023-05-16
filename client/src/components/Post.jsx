@@ -6,7 +6,7 @@ const Post = ({ _id, title, summary, createdAt, author, cover }) => {
     <section className="post">
       <div className="image">
         <Link to={`/post/${_id}`}>
-          <img src={"http://localhost:4000/" + cover} alt="nice" />
+          <img src={`${import.meta.env.VITE_UPLOAD_URL}/` + cover} alt="nice" />
         </Link>
       </div>
       <div className="texts">
