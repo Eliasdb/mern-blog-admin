@@ -20,7 +20,12 @@ const dbPassword = process.env.DB_PASSWORD;
 const salt = bcrypt.genSaltSync(10);
 const secret = process.env.SECRET;
 
-app.use(cors({ credentials: true }));
+app.use(
+  cors({
+    credentials: true,
+    origin: "https://fullstack-admin-space.netlify.app/",
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
