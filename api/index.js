@@ -23,7 +23,10 @@ const secret = process.env.SECRET;
 app.use(
   cors({
     credentials: true,
-    origin: "https://fullstack-admin-space.netlify.app",
+    origin: [
+      "https://fullstack-admin-space.netlify.app",
+      "http://localhost:5176",
+    ],
   })
 );
 app.use(express.json());
