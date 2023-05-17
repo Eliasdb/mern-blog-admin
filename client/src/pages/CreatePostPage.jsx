@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Navigate } from "react-router-dom";
 import Editor from "../components/Editor";
 
@@ -8,6 +8,17 @@ const CreatePostPage = () => {
   const [content, setContent] = useState("");
   const [files, setFiles] = useState([]);
   const [redirect, setRedirect] = useState(false);
+  const { setUserInfo, userInfo } = useContext(UserContext);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL}/profile`, {
+      credentials: "include",
+    }).then((response) => {
+      response.json().then((userInfo) => {
+        setUserInfo(userInfo);
+      });
+    });
+  }, []);
 
   const createNewPost = async (e) => {
     e.preventDefault();

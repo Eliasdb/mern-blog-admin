@@ -6,17 +6,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../assets/full.png";
 
 const Header = () => {
-  const { setUserInfo, userInfo, isLoggedIn } = useContext(UserContext);
-
-  // useEffect(() => {
-  //   fetch(`${import.meta.env.VITE_API_URL}/profile`, {
-  //     credentials: "include",
-  //   }).then((response) => {
-  //     response.json().then((userInfo) => {
-  //       setUserInfo(userInfo);
-  //     });
-  //   });
-  // }, [isLoggedIn]);
+  const { setUserInfo, isLoggedIn } = useContext(UserContext);
 
   const logout = () => {
     fetch(`${import.meta.env.VITE_API_URL}/logout`, {
@@ -25,8 +15,6 @@ const Header = () => {
     });
     setUserInfo(null);
   };
-
-  const username = userInfo?.username;
 
   return (
     <header>
