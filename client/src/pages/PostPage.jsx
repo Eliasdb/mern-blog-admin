@@ -34,7 +34,7 @@ const PostPage = () => {
       </div>
       {userInfo.id === postInfo.author._id && (
         <div className="edit-row">
-          <Link to={`/edit/${postInfo._id}`} className="edit-btn">
+          <Link to={`/admin/edit/${postInfo._id}`} className="edit-btn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

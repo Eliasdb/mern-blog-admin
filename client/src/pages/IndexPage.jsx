@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Post from "../components/Post";
+import { UserContext } from "../../context/UserContext";
 
 const IndexPage = () => {
   const [posts, setPosts] = useState([]);
+  const { setIsLoggedIn } = useContext(UserContext);
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/post`).then((response) => {
       response.json().then((posts) => {
         setPosts(posts);
+        setIsLoggedIn(true);
       });
     });
   }, []);

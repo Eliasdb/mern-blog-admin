@@ -43,7 +43,7 @@ const CreatePostPage = () => {
   };
 
   if (redirect) {
-    return <Navigate to="/" />;
+    return <Navigate to="/admin/index" />;
   }
   return (
     <form onSubmit={createNewPost}>

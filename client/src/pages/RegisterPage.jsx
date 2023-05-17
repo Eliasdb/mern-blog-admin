@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Logo from "../assets/full.png";
 
 const RegisterPage = () => {
   const [username, setUsername] = useState("");
@@ -21,26 +22,30 @@ const RegisterPage = () => {
   };
 
   return (
-    <form className="register" onSubmit={register}>
-      <h1>Register</h1>
-      <input
-        type="text"
-        name="username"
-        id="username"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        name="password"
-        id="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button>Register</button>
-    </form>
+    <div className="login-container">
+      <aside className="aside" />
+      <form className="register" onSubmit={register}>
+        <img src={Logo} alt="logo" className="form-logo" />
+        <h1>Register</h1>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button>Register</button>
+      </form>
+    </div>
   );
 };
 export default RegisterPage;

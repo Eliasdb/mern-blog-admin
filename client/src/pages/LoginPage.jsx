@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
+import Logo from "../assets/full.png";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -28,29 +29,40 @@ const LoginPage = () => {
     }
   };
   if (redirect) {
-    return <Navigate to="/" />;
+    return <Navigate to="/admin/index" />;
   }
   return (
-    <form className="login" onSubmit={login}>
-      <h1>Login</h1>
-      <input
-        type="text"
-        name="username"
-        id="username"
-        value={username}
-        placeholder="Username"
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        name="password"
-        id="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button>Login</button>
-    </form>
+    <div className="login-container">
+      <aside className="aside" />
+      <form className="login" onSubmit={login}>
+        <img src={Logo} alt="logo" className="form-logo" />
+        <h1>Login</h1>
+        <small className="small-register">
+          No account?{" "}
+          <Link className="register-link" to="/register">
+            Register.
+          </Link>
+        </small>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          value={username}
+          placeholder="Username"
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <button>Login</button>
+      </form>
+    </div>
   );
 };
 export default LoginPage;
