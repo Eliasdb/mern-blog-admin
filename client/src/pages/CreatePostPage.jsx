@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Navigate } from "react-router-dom";
 import Editor from "../components/Editor";
+import { UserContext } from "../../context/UserContext";
 
 const CreatePostPage = () => {
   const [title, setTitle] = useState("");
