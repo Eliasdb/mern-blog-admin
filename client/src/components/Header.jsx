@@ -8,15 +8,15 @@ import Logo from "../assets/full.png";
 const Header = () => {
   const { setUserInfo, userInfo, isLoggedIn } = useContext(UserContext);
 
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/profile`, {
-      credentials: "include",
-    }).then((response) => {
-      response.json().then((userInfo) => {
-        setUserInfo(userInfo);
-      });
-    });
-  }, [isLoggedIn]);
+  // useEffect(() => {
+  //   fetch(`${import.meta.env.VITE_API_URL}/profile`, {
+  //     credentials: "include",
+  //   }).then((response) => {
+  //     response.json().then((userInfo) => {
+  //       setUserInfo(userInfo);
+  //     });
+  //   });
+  // }, [isLoggedIn]);
 
   const logout = () => {
     fetch(`${import.meta.env.VITE_API_URL}/logout`, {
@@ -34,7 +34,7 @@ const Header = () => {
         <img src={Logo} className="logo" alt="fullstack. logo" />
       </Link>
       <nav>
-        {username && (
+        {isLoggedIn && (
           <div className="create-logout-btns">
             <Link to="/create" className="create-btn">
               <FontAwesomeIcon
@@ -61,7 +61,7 @@ const Header = () => {
             </svg>
           </div>
         )}
-        {!username && (
+        {!isLoggedIn && (
           <>
             <Link to="/login">Login</Link>
             <Link to="/register">Register</Link>
