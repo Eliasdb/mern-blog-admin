@@ -5,13 +5,13 @@ const Post = ({ _id, title, summary, createdAt, author, cover }) => {
   return (
     <section className="post">
       <div className="image">
-        <Link to={`/admin/post/${_id}`}>
+        <Link to={`/post/${_id}`}>
           <img src={`${import.meta.env.VITE_UPLOAD_URL}/` + cover} alt="nice" />
         </Link>
       </div>
       <div className="texts">
         <div className="title">
-          <Link to={`/admin/post/${_id}`}>
+          <Link to={`/post/${_id}`}>
             <h2>{title}</h2>
           </Link>
         </div>

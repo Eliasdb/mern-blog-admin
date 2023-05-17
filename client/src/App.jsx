@@ -17,10 +17,9 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route element={<Layout />}>
           <Route path="/" element={<IndexPage />} />
-
-          <Route path="/admin/create" element={<CreatePostPage />} />
-          <Route path="/admin/post/:id" element={<PostPage />} />
-          <Route path="/admin/edit/:id" element={<EditPostPage />} />
+          <Route path="/create" element={<CreatePostPage />} />
+          <Route path="/post/:id" element={<PostPage />} />
+          <Route path="/edit/:id" element={<EditPostPage />} />
         </Route>
       </Routes>
     </UserContextProvider>

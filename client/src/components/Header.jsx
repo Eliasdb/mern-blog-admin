@@ -30,7 +30,7 @@ const Header = () => {
       <nav>
         {isLoggedIn && (
           <div className="create-logout-btns">
-            <Link to="/admin/create" className="create-btn">
+            <Link to="/create" className="create-btn">
               <FontAwesomeIcon
                 icon={faPlus}
                 size="lg"
@@ -38,7 +38,7 @@ const Header = () => {
               />
               Create new post
             </Link>
-            <Link to="/" onClick={logout}>
+            <Link to="/login" onClick={logout}>
               Logout
             </Link>
           </div>
