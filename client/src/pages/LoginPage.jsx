@@ -29,7 +29,7 @@ const LoginPage = () => {
     }
   };
   if (redirect) {
-    return <Navigate to="/admin/index" />;
+    return <Navigate to="/" />;
   }
   return (
     <div className="login-container">

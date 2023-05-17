@@ -7,10 +7,10 @@ const IndexPage = () => {
   const { setIsLoggedIn } = useContext(UserContext);
 
   useEffect(() => {
+    setIsLoggedIn(true);
     fetch(`${import.meta.env.VITE_API_URL}/post`).then((response) => {
       response.json().then((posts) => {
         setPosts(posts);
-        setIsLoggedIn(true);
       });
     });
   }, []);

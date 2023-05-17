@@ -7,6 +7,7 @@ import Logo from "../assets/full.png";
 
 const Header = () => {
   const { setUserInfo, isLoggedIn, setIsLoggedIn } = useContext(UserContext);
+  const [redirect, setRedirect] = useState(false);
 
   const logout = () => {
     fetch(`${import.meta.env.VITE_API_URL}/logout`, {
@@ -14,14 +15,16 @@ const Header = () => {
       method: "POST",
     });
     setUserInfo(null);
-    setIsLoggedIn(false);
+    setRedirect(true);
   };
-  if (!isLoggedIn) {
-    return <Navigate to="/" />;
+
+  if (redirect) {
+    return <Navigate to="/login" />;
   }
+
   return (
     <header>
-      <Link to="/admin/index" className="logo">
+      <Link to="/" className="logo">
         <img src={Logo} className="logo" alt="fullstack. logo" />
       </Link>
       <nav>
