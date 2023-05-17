@@ -11,15 +11,15 @@ const CreatePostPage = () => {
   const [redirect, setRedirect] = useState(false);
   const { setUserInfo, userInfo } = useContext(UserContext);
 
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/profile`, {
-      credentials: "include",
-    }).then((response) => {
-      response.json().then((userInfo) => {
-        setUserInfo(userInfo);
-      });
+  const response = fetch(`${import.meta.env.VITE_API_URL}/profile`, {
+    credentials: "include",
+  });
+
+  if (response.ok) {
+    response.json().then((userInfo) => {
+      setUserInfo(userInfo);
     });
-  }, []);
+  }
 
   const createNewPost = async (e) => {
     e.preventDefault();
