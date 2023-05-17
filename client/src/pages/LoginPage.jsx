@@ -6,7 +6,7 @@ const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
-  const { setUserInfo } = useContext(UserContext);
+  const { setUserInfo, setIsLoggedIn } = useContext(UserContext);
 
   const login = async (e) => {
     e.preventDefault();
@@ -21,6 +21,7 @@ const LoginPage = () => {
       response.json().then((userInfo) => {
         setUserInfo(userInfo);
         setRedirect(true);
+        setIsLoggedIn(true);
       });
     } else {
       alert("Wrong credentials");

@@ -6,7 +6,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../assets/full.png";
 
 const Header = () => {
-  const { setUserInfo, userInfo } = useContext(UserContext);
+  const { setUserInfo, userInfo, isLoggedIn } = useContext(UserContext);
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/profile`, {
@@ -16,7 +16,7 @@ const Header = () => {
         setUserInfo(userInfo);
       });
     });
-  }, []);
+  }, [isLoggedIn]);
 
   const logout = () => {
     fetch(`${import.meta.env.VITE_API_URL}/logout`, {
