@@ -6,7 +6,8 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../assets/full(1).png";
 
 const Header = () => {
-  const { setUserInfo, isLoggedIn, setIsLoggedIn } = useContext(UserContext);
+  const { setUserInfo, isLoggedIn, setIsLoggedIn, hideCreateBtn } =
+    useContext(UserContext);
   const [redirect, setRedirect] = useState(false);
 
   const logout = () => {
@@ -29,7 +30,10 @@ const Header = () => {
       </Link>
       <nav>
         <div className="create-logout-btns">
-          <Link to="/create" className="create-btn">
+          <Link
+            to="/create"
+            className={`create-btn ${hideCreateBtn ? "hidden" : ""}`}
+          >
             <FontAwesomeIcon
               icon={faPlus}
               size="lg"

@@ -435,3 +435,11 @@ input::file-selector-button {
   outline-color: #161032;
   outline-width: thin;
 }
+
+.summary-textarea {
+  max-width: 100%;
+}
+
+.hidden {
+  display: none;
+}

@@ -9,7 +9,11 @@ const CreatePostPage = () => {
   const [content, setContent] = useState("");
   const [files, setFiles] = useState([]);
   const [redirect, setRedirect] = useState(false);
-  const { setUserInfo, userInfo } = useContext(UserContext);
+  const { setUserInfo, userInfo, setHideCreateBtn } = useContext(UserContext);
+
+  useEffect(() => {
+    setHideCreateBtn(true);
+  }, []);
 
   const response = fetch(`${import.meta.env.VITE_API_URL}/profile`, {
     credentials: "include",
@@ -59,6 +63,7 @@ const CreatePostPage = () => {
           type="summary"
           placeholder="Summary"
           value={summary}
+          className="summary-textarea"
           onChange={(e) => setSummary(e.target.value)}
         />
         <input type="file" onChange={(e) => setFiles(e.target.files)} />
