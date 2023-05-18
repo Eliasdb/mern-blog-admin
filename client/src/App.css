@@ -20,9 +20,22 @@ img {
   padding: 0.6rem;
   max-width: 60rem;
   margin: 0 auto;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
-main.entries {
+.footer {
+  margin-top: auto;
+  padding-bottom: 2rem;
+  color: #161032;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+section.entries {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
@@ -42,7 +55,7 @@ header {
 
 header a {
   text-decoration: none;
-  color: inherit;
+  color: #161032;
 }
 
 header a.logo {
@@ -57,7 +70,6 @@ header nav {
 
 section.post {
   margin-bottom: 2rem;
-
   border-radius: 0.2rem;
   overflow: hidden;
   color: #edf7f6;
@@ -70,15 +82,30 @@ section.post img {
 }
 
 @media screen and (max-width: 768px) {
-  main.entries {
+  section.entries {
     grid-template-columns: 1fr;
-    margin: 0 9rem;
+    margin: 0 8rem;
+  }
+  .footer {
+    text-align: center;
   }
 }
 
-@media screen and (max-width: 425px) {
+/* @media screen and (max-width: 643px) {
   main.entries {
-    margin: 0;
+    margin: 0 6rem;
+  }
+} */
+
+@media screen and (max-width: 589px) {
+  section.entries {
+    margin: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  header {
+    flex-direction: column;
   }
 }
 
@@ -280,4 +307,37 @@ form.register img.form-logo {
 .register-link {
   text-decoration: none;
   color: #161032;
+}
+
+h2.overview-title {
+  color: #161032;
+  margin-bottom: 2rem;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  height: 80vh;
+  margin-top: 11rem;
+  text-align: center;
+}
+
+.loading {
+  width: 6rem;
+  height: 6rem;
+  border: 5px solid #fe5d26;
+  border-radius: 50%;
+  border-top-color: #161032;
+  animation: spinner 2s linear infinite;
+}
+.loading-center {
+  margin: 0 auto;
+}
+
+.loading-text {
+  margin-top: 1rem;
 }
