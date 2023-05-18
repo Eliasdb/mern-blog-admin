@@ -5,11 +5,12 @@ import Loading from "../components/Loading";
 
 const IndexPage = () => {
   const [posts, setPosts] = useState([]);
-  const { setIsLoggedIn } = useContext(UserContext);
+  const { setIsLoggedIn, setHideCreateBtn } = useContext(UserContext);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setIsLoggedIn(true);
+    setHideCreateBtn(false);
     fetch(`${import.meta.env.VITE_API_URL}/post`).then((response) => {
       response.json().then((posts) => {
         setPosts(posts);
