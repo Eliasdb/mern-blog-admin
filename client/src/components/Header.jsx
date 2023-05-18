@@ -28,27 +28,19 @@ const Header = () => {
         <img src={Logo} className="logo" alt="fullstack. logo" />
       </Link>
       <nav>
-        {isLoggedIn && (
-          <div className="create-logout-btns">
-            <Link to="/create" className="create-btn">
-              <FontAwesomeIcon
-                icon={faPlus}
-                size="lg"
-                style={{ color: "#ffffff" }}
-              />
-              Create new post
-            </Link>
-            <Link to="/login" onClick={logout} className="logout-btn">
-              Logout
-            </Link>
-          </div>
-        )}
-        {!isLoggedIn && (
-          <>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
-          </>
-        )}
+        <div className="create-logout-btns">
+          <Link to="/create" className="create-btn">
+            <FontAwesomeIcon
+              icon={faPlus}
+              size="lg"
+              style={{ color: "#ffffff" }}
+            />
+            Create new post
+          </Link>
+          <Link to="/login" onClick={logout} className="logout-btn">
+            Logout
+          </Link>
+        </div>
       </nav>
     </header>
   );
