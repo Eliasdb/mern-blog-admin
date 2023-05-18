@@ -44,6 +44,8 @@ const LoginPage = () => {
           id="username"
           value={username}
           placeholder="Username"
+          style={{ background: "white" }}
+          className="login-input"
           onChange={(e) => setUsername(e.target.value)}
         />
         <input
@@ -52,6 +54,8 @@ const LoginPage = () => {
           id="password"
           placeholder="Password"
           value={password}
+          style={{ background: "white" }}
+          className="login-input"
           onChange={(e) => setPassword(e.target.value)}
         />
 

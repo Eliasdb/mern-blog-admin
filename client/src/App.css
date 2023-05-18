@@ -113,7 +113,7 @@ section.post img {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 555px) {
   header {
     flex-direction: column;
   }
@@ -150,7 +150,8 @@ form.register {
   margin: 0 auto;
 }
 
-input {
+input,
+textarea {
   display: block;
   margin-bottom: 0.3rem;
   width: 100%;
@@ -158,7 +159,25 @@ input {
   border: 1px solid #ddd;
   border-radius: 0.3rem;
   padding: 5px 7px;
-  background: #fff;
+  background: #86a5d9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+textarea::placeholder,
+input::placeholder {
+  color: inherit;
+}
+textarea {
+  height: 5rem;
+}
+.ql-toolbar.ql-snow {
+  background: #86a5d9;
+}
+
+.ql-editor {
+  background: #86a5d9;
 }
 
 button {
@@ -324,9 +343,10 @@ form.register img.form-logo {
   color: #161032;
 }
 
-h2.overview-title {
+h1.overview-title {
   color: #edf7f6;
   margin-bottom: 2rem;
+  font-size: 2.5rem;
 }
 
 @keyframes spinner {
@@ -369,4 +389,49 @@ h2.overview-title {
 
 .login-btn {
   margin-bottom: 1rem;
+}
+
+.create-title {
+  color: #edf7f6;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+textarea:focus,
+input:focus,
+.ql-editor:focus {
+  outline: none;
+  background: #c3d2ec;
+}
+
+.create-post-btn {
+  margin-top: 2rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  width: 21%;
+  margin: 0 auto;
+}
+.create-post-btn:hover {
+  background-color: #cb4a1e;
+}
+
+input::file-selector-button {
+  /* font-weight: bold; */
+  background: #edf7f6;
+  color: #161032;
+  padding: 0.5em;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.ql-snow,
+.ql-editor {
+  border-radius: 0.2rem;
+}
+
+.register-input:focus,
+.login-input:focus {
+  outline: auto;
+  outline-color: #161032;
+  outline-width: thin;
 }

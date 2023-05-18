@@ -46,23 +46,28 @@ const CreatePostPage = () => {
     return <Navigate to="/" />;
   }
   return (
-    <form onSubmit={createNewPost}>
-      <input
-        type="title"
-        placeholder="Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <input
-        type="summary"
-        placeholder="Summary"
-        value={summary}
-        onChange={(e) => setSummary(e.target.value)}
-      />
-      <input type="file" onChange={(e) => setFiles(e.target.files)} />
-      <Editor value={content} onChange={setContent} />
-      <button style={{ marginTop: "5px" }}>Create post</button>
-    </form>
+    <>
+      <h2 className="create-title">Create blog post</h2>
+      <form onSubmit={createNewPost}>
+        <input
+          type="title"
+          placeholder="Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <textarea
+          type="summary"
+          placeholder="Summary"
+          value={summary}
+          onChange={(e) => setSummary(e.target.value)}
+        />
+        <input type="file" onChange={(e) => setFiles(e.target.files)} />
+        <Editor value={content} onChange={setContent} />
+        <button style={{ marginTop: "2rem" }} className="create-post-btn">
+          Create
+        </button>
+      </form>
+    </>
   );
 };
 export default CreatePostPage;

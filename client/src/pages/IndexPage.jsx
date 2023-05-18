@@ -21,9 +21,7 @@ const IndexPage = () => {
   return (
     <main>
       <div>
-        <h2 className="overview-title">
-          <h2>Overview articles</h2>
-        </h2>
+        <h1 className="overview-title">Overview articles</h1>
       </div>
       {loading && <Loading />}
       <section className="entries">

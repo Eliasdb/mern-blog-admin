@@ -35,6 +35,8 @@ const RegisterPage = () => {
           id="username"
           placeholder="Username"
           value={username}
+          className="register-input"
+          style={{ background: "white" }}
           onChange={(e) => setUsername(e.target.value)}
         />
         <input
@@ -43,6 +45,8 @@ const RegisterPage = () => {
           id="password"
           placeholder="Password"
           value={password}
+          className="register-input"
+          style={{ background: "white" }}
           onChange={(e) => setPassword(e.target.value)}
         />
         <button>Register</button>
