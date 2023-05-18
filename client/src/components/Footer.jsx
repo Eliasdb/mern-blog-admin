@@ -3,7 +3,9 @@ const Footer = () => {
     <footer className="footer">
       <small className="copy">
         &copy; {new Date().getFullYear()} by{" "}
-        <span className="font-bold">elias</span>
+        <a href="https://elias-de-bock.netlify.app/" className="font-bold">
+          elias
+        </a>
       </small>
     </footer>
   );

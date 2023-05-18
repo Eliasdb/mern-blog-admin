@@ -1,6 +1,6 @@
 body {
   color: #222;
-  background: #edf7f6;
+  background: #161032;
 }
 
 * {
@@ -28,11 +28,17 @@ img {
 .footer {
   margin-top: auto;
   padding-bottom: 2rem;
-  color: #161032;
+  color: #edf7f6;
 }
 
 .font-bold {
   font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
+
+.font-bold:hover {
+  color: #fe5d26;
 }
 
 section.entries {
@@ -51,6 +57,10 @@ header {
   align-items: center;
   margin-top: 1.4rem;
   margin-bottom: 3.125rem;
+  box-shadow: 1px 2px 2px;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #86a5d9;
 }
 
 header a {
@@ -70,10 +80,10 @@ header nav {
 
 section.post {
   margin-bottom: 2rem;
-  border-radius: 0.2rem;
+  border-radius: 0.5rem;
   overflow: hidden;
-  color: #edf7f6;
-  background: #161032;
+  color: #161032;
+  background: #edf7f6;
 }
 
 section.post img {
@@ -153,7 +163,6 @@ input {
 
 button {
   cursor: pointer;
-
   width: 100%;
   display: block;
   background: #fe5d26;
@@ -168,6 +177,7 @@ form.register h1 {
   text-align: center;
   margin-bottom: 2rem;
   color: #161032;
+  z-index: 1;
 }
 
 section.post-page div.image {
@@ -196,7 +206,7 @@ section.post-page h1 {
 section.post-page div.title {
   position: absolute;
   z-index: 2;
-  top: 29%;
+  top: 36%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -281,6 +291,7 @@ section.post div.title {
 
 .login-container {
   display: flex;
+  background: #edf7f6;
 }
 
 form.login,
@@ -297,11 +308,15 @@ form.register img.form-logo {
   transform: translateX(10px);
   margin-bottom: -2rem;
   display: block;
-  z-index: -1;
+  z-index: 0;
 }
 
 .small-register {
-  margin: 1rem 0;
+  /* position: absolute; */
+}
+
+.hidden-register {
+  display: none;
 }
 
 .register-link {
@@ -310,7 +325,7 @@ form.register img.form-logo {
 }
 
 h2.overview-title {
-  color: #161032;
+  color: #edf7f6;
   margin-bottom: 2rem;
 }
 
@@ -327,11 +342,11 @@ h2.overview-title {
 }
 
 .loading {
-  width: 6rem;
-  height: 6rem;
-  border: 5px solid #fe5d26;
+  width: 5rem;
+  height: 5rem;
+  border: 5px solid #161032;
   border-radius: 50%;
-  border-top-color: #161032;
+  border-top-color: #fe5d26;
   animation: spinner 2s linear infinite;
 }
 .loading-center {
@@ -339,5 +354,19 @@ h2.overview-title {
 }
 
 .loading-text {
-  margin-top: 1rem;
+  margin-top: 2rem;
+  color: #edf7f6;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+}
+
+.logout-btn:hover {
+  color: #edf7f6;
+}
+
+.login-btn {
+  margin-bottom: 1rem;
 }

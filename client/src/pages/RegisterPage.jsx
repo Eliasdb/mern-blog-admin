@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Logo from "../assets/full.png";
+import { Link } from "react-router-dom";
 
 const RegisterPage = () => {
   const [username, setUsername] = useState("");
@@ -27,6 +28,7 @@ const RegisterPage = () => {
       <form className="register" onSubmit={register}>
         <img src={Logo} alt="logo" className="form-logo" />
         <h1>Register</h1>
+
         <input
           type="text"
           name="username"
@@ -44,6 +46,12 @@ const RegisterPage = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button>Register</button>
+        <small className="hidden-register">
+          No account?{" "}
+          <Link className="register-link" to="/register">
+            Register.
+          </Link>
+        </small>
       </form>
     </div>
   );

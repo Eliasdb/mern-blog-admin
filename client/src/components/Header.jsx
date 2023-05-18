@@ -3,7 +3,7 @@ import { Link, Navigate } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import Logo from "../assets/full.png";
+import Logo from "../assets/full(1).png";
 
 const Header = () => {
   const { setUserInfo, isLoggedIn, setIsLoggedIn } = useContext(UserContext);
@@ -38,7 +38,7 @@ const Header = () => {
               />
               Create new post
             </Link>
-            <Link to="/login" onClick={logout}>
+            <Link to="/login" onClick={logout} className="logout-btn">
               Logout
             </Link>
           </div>

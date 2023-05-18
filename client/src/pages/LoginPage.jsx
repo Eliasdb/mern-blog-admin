@@ -37,12 +37,7 @@ const LoginPage = () => {
       <form className="login" onSubmit={login}>
         <img src={Logo} alt="logo" className="form-logo" />
         <h1>Login</h1>
-        <small className="small-register">
-          No account?{" "}
-          <Link className="register-link" to="/register">
-            Register.
-          </Link>
-        </small>
+
         <input
           type="text"
           name="username"
@@ -60,7 +55,13 @@ const LoginPage = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button>Login</button>
+        <button className="login-btn">Login</button>
+        <small className="small-register">
+          No account?{" "}
+          <Link className="register-link" to="/register">
+            Register.
+          </Link>
+        </small>
       </form>
     </div>
   );
