@@ -48,23 +48,29 @@ const EditPostPage = () => {
   }
 
   return (
-    <form onSubmit={updatePost}>
-      <input
-        type="title"
-        placeholder="Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <input
-        type="summary"
-        placeholder="Summary"
-        value={summary}
-        onChange={(e) => setSummary(e.target.value)}
-      />
-      <input type="file" onChange={(e) => setFiles(e.target.files)} />
-      <Editor onChange={setContent} value={content} />
-      <button style={{ marginTop: "5px" }}>Update post</button>
-    </form>
+    <>
+      <h2 className="create-title">Edit blog post</h2>
+      <form onSubmit={updatePost}>
+        <input
+          type="title"
+          placeholder="Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <textarea
+          type="summary"
+          placeholder="Summary"
+          value={summary}
+          className="summary-textarea"
+          onChange={(e) => setSummary(e.target.value)}
+        />
+        <input type="file" onChange={(e) => setFiles(e.target.files)} />
+        <Editor onChange={setContent} value={content} />
+        <button style={{ marginTop: "2rem" }} className="create-post-btn">
+          Update post
+        </button>
+      </form>
+    </>
   );
 };
 export default EditPostPage;

@@ -1,14 +1,26 @@
 import { format } from "date-fns";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Post = ({ _id, title, summary, createdAt, author, cover }) => {
   return (
     <section className="post">
       <div className="image">
         <Link to={`/post/${_id}`}>
-          <img src={`${import.meta.env.VITE_UPLOAD_URL}/` + cover} alt="nice" />
+          {/* <LazyLoadImage
+            src={`${import.meta.env.VITE_UPLOAD_URL}/` + cover}
+            height={200}
+            width={450}
+            effect="blur"
+          /> */}
+          <img
+            src={`${import.meta.env.VITE_UPLOAD_URL}/` + cover}
+            alt="nice"
+            loading="lazy"
+          />
         </Link>
       </div>
+
       <div className="texts">
         <div className="title">
           <Link to={`/post/${_id}`}>

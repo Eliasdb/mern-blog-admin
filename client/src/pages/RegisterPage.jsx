@@ -50,10 +50,10 @@ const RegisterPage = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button>Register</button>
-        <small className="hidden-register">
-          No account?{" "}
-          <Link className="register-link" to="/register">
-            Register.
+        <small className="small-register">
+          Account?{" "}
+          <Link className="register-link" to="/login">
+            Login.
           </Link>
         </small>
       </form>

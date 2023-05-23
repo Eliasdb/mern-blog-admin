@@ -21,9 +21,15 @@ const PostPage = () => {
   return (
     <section className="post-page">
       <div className="title">
-        <h1>{postInfo.title}</h1>
-        <time>{format(new Date(postInfo.createdAt), "MMM d yyyy HH:mm")}</time>
-        <div className="author">by @{postInfo.author.username}</div>
+        <div className="hero-title">
+          <h1>{postInfo.title}</h1>
+        </div>
+        <div className="sm-text">
+          <time>
+            {format(new Date(postInfo.createdAt), "MMM d yyyy HH:mm")}
+          </time>
+          <div className="author">by @{postInfo.author.username}</div>
+        </div>
       </div>
 
       <div className="image">

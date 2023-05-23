@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { Suspense, useContext, useEffect, useState } from "react";
 import Post from "../components/Post";
 import { UserContext } from "../../context/UserContext";
 import Loading from "../components/Loading";
@@ -27,7 +27,9 @@ const IndexPage = () => {
       {loading && <Loading />}
       <section className="entries">
         {posts.length > 0 &&
-          posts.map((post, id) => <Post {...post} key={id} />)}
+          posts.map((post, id) => {
+            return <Post {...post} key={id} />;
+          })}
       </section>
     </main>
   );
