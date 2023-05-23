@@ -49,7 +49,7 @@ const RegisterPage = () => {
           style={{ background: "white" }}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button>Register</button>
+        <button className="login-btn">Register</button>
         <small className="small-register">
           Account?{" "}
           <Link className="register-link" to="/login">
