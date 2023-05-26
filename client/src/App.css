@@ -206,6 +206,7 @@ section.post-page div.image {
   overflow: hidden;
   position: relative;
   margin-bottom: 5rem;
+  background-color: #161032;
 }
 section.post-page div.image img {
   object-fit: cover;
