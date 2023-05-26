@@ -1,8 +1,15 @@
 import { format } from "date-fns";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useState } from "react";
 
 const Post = ({ _id, title, summary, createdAt, author, cover }) => {
+  const [loaded, setLoaded] = useState(false);
+
+  const onLoad = () => {
+    console.log("loaded");
+    setLoaded(true);
+  };
   return (
     <section className="post">
       <div className="image">
@@ -17,7 +24,9 @@ const Post = ({ _id, title, summary, createdAt, author, cover }) => {
             src={`${import.meta.env.VITE_UPLOAD_URL}/` + cover}
             alt="nice"
             loading="lazy"
+            onLoad={onLoad}
           />
+          {!loaded && <div>Loading image</div>}
         </Link>
       </div>
 
