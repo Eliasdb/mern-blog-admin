@@ -23,7 +23,7 @@ const secret = process.env.SECRET;
 app.use(
   cors({
     credentials: true,
-    origin: "*",
+    origin: [process.env.CLIENT_ORIGIN, process.env.LIVE_ORIGIN],
   })
 );
 app.use(express.json());
