@@ -23,7 +23,7 @@ const secret = process.env.SECRET;
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:5176",
+    origin: "*",
   })
 );
 app.use(express.json());
