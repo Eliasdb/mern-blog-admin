@@ -28,9 +28,11 @@ const LoginPage = () => {
       alert("Wrong credentials");
     }
   };
+
   if (redirect) {
     return <Navigate to="/" />;
   }
+
   return (
     <div className="login-container">
       <aside className="aside" />
@@ -63,7 +65,8 @@ const LoginPage = () => {
         <small className="small-register">
           No account?{" "}
           <Link className="register-link" to="/register">
-            Register.
+            Register. <br />
+            <br /> Demo credentials: UN: demo, PW: demo
           </Link>
         </small>
       </form>

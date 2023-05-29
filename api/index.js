@@ -26,6 +26,7 @@ app.use(
     origin: [
       "http://localhost:5176",
       "https://fullstack-admin-space.netlify.app",
+      "https://elias-de-bock.netlify.app",
     ],
   })
 );

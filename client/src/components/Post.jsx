@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useState } from "react";
+import { Skeleton } from "@mui/material";
 
 const Post = ({ _id, title, summary, createdAt, author, cover }) => {
   const [loaded, setLoaded] = useState(false);
@@ -13,20 +13,13 @@ const Post = ({ _id, title, summary, createdAt, author, cover }) => {
   return (
     <section className="post">
       <div className="image">
+        {!loaded && <div className="skeleton" />}
         <Link to={`/post/${_id}`}>
-          {/* <LazyLoadImage
-            src={`${import.meta.env.VITE_UPLOAD_URL}/` + cover}
-            height={200}
-            width={450}
-            effect="blur"
-          /> */}
           <img
-            src={`${import.meta.env.VITE_UPLOAD_URL}/` + cover}
+            src={`${import.meta.env.VITE_UPLOAD_URL}` + cover}
             alt="nice"
-            loading="lazy"
             onLoad={onLoad}
           />
-          {!loaded && <div>Loading image</div>}
         </Link>
       </div>
 

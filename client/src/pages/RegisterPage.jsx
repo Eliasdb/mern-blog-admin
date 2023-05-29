@@ -27,7 +27,7 @@ const RegisterPage = () => {
       <aside className="aside" />
       <form className="register" onSubmit={register}>
         <img src={Logo} alt="logo" className="form-logo" />
-        <h1>Register</h1>
+        <h1>Register (disabled)</h1>
 
         <input
           type="text"
@@ -37,7 +37,7 @@ const RegisterPage = () => {
           value={username}
           className="register-input"
           style={{ background: "white" }}
-          onChange={(e) => setUsername(e.target.value)}
+          // onChange={(e) => setUsername(e.target.value)}
         />
         <input
           type="password"
@@ -47,9 +47,11 @@ const RegisterPage = () => {
           value={password}
           className="register-input"
           style={{ background: "white" }}
-          onChange={(e) => setPassword(e.target.value)}
+          // onChange={(e) => setPassword(e.target.value)}
         />
-        <button className="login-btn">Register</button>
+        <button className="login-btn" disabled>
+          Register
+        </button>
         <small className="small-register">
           Account?{" "}
           <Link className="register-link" to="/login">
