@@ -17,7 +17,7 @@ const Post = ({ _id, title, summary, createdAt, author, cover }) => {
         <Link to={`/post/${_id}`}>
           <img
             src={`${import.meta.env.VITE_UPLOAD_URL}/` + cover}
-            alt="nice"
+            alt="cover"
             onLoad={onLoad}
           />
         </Link>
