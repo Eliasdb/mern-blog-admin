@@ -35,7 +35,7 @@ const PostPage = () => {
       <div className="image">
         <img
           src={`${import.meta.env.VITE_UPLOAD_URL}/${postInfo.cover}`}
-          alt=""
+          alt="cover"
         />
       </div>
       {userInfo.id === postInfo.author._id && (
