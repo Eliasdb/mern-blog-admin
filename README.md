@@ -21,7 +21,7 @@ This is a MERN stack application through which users are able to:
 
 Front end:
 `cd client`
-`npm i && npm start`
+`npm i && npm run dev`
 
 Backend:
 `cd api`
